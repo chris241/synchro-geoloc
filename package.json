@@ -4,9 +4,10 @@
   "private": true,
   "dependencies": {
     "leaflet": "^1.4.0",
-    "react": "16.5.0",
+    "react": "18.1.0",
     "react-dom": "16.5.0",
-    "react-leaflet": "^2.2.0"
+    "react-leaflet": "^2.2.0",
+    "react-modal": "^3.16.1"
   },
   "scripts": {
     "start": "react-scripts start",

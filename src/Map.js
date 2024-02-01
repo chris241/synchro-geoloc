@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Map, TileLayer } from 'react-leaflet';
+import React, { Component } from "react";
+import { Map, TileLayer } from "react-leaflet";
 
 class MapExample extends Component {
   constructor(props) {
@@ -10,19 +10,26 @@ class MapExample extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.resetLocation = this.resetLocation.bind(this);
+    this.cancel = this.cancel.bind(this);
+    this.synchro = this.synchro.bind(this);
   }
 
   handleClick(e) {
     this.setState({ lat: e.latlng?.lat, lng: e.latlng?.lng });
   }
   resetLocation() {
-    this.setState({ lat: '', lng: '' });
+    this.setState({ lat: "", lng: "" });
+  }
+  synchro() {
+    console.log("synchro");
+  }
+  cancel() {
+    console.log("cancel");
   }
 
   render() {
     return (
       <div>
-        <h3>Geolocation of the news (Belgium)</h3>
         <label>latitude</label>
         <input type="text" value={this.state.lat} />
         <label>longitue</label>
@@ -40,8 +47,6 @@ class MapExample extends Component {
         >
           <TileLayer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
         </Map>
-        <button>Cancel</button>
-        <button>Ok</button>
       </div>
     );
   }
