@@ -24,6 +24,12 @@ class DynamicListModal extends React.Component {
       isModalOpen: false,
     });
   };
+  closeModalOK = () => {
+    this.setState({
+      selectedItem: null,
+      isModalOpen: false,
+    });
+  };
 
   render() {
     const { selectedItem, isModalOpen } = this.state;
@@ -41,6 +47,7 @@ class DynamicListModal extends React.Component {
         <CustomModal
           isOpen={isModalOpen}
           onRequestClose={this.closeModal}
+          onRequestOk={this.closeModalOK}
           content={selectedItem}
         />
       </div>

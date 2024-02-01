@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import Map from "./Map";
 class CustomModal extends React.Component {
   render() {
-    const { isOpen, onRequestClose, content } = this.props;
+    const { isOpen, onRequestClose, content, onRequestOk } = this.props;
 
     return (
       <Modal
@@ -14,7 +14,7 @@ class CustomModal extends React.Component {
         <h3>Geolocation of the news ({content})</h3>
         <Map zoom={8} center={{ lat: 51.5287718, lng: -0.2416804 }} />
         <input type="submit" onClick={onRequestClose} value="Cancel" />
-        <input type="submit" onClick={onRequestClose} value="Ok" />
+        <input type="submit" onClick={onRequestOk} value="Ok" />
       </Modal>
     );
   }
